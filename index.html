@@ -448,22 +448,27 @@
         }
 
         .shade-img {
-            aspect-ratio: 3/4;
+            overflow: hidden;
+    background: #f8f1e9;
             overflow: hidden;
             position: relative;
         }
 
-        .shade-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+.shade-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
             transition: transform 0.5s ease;
         }
 
-        .shade-card:hover .shade-img img {
-            transform: scale(1.06);
-        }
-
+.shade-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
         .shade-number {
             position: absolute;
             top: 1rem;
