@@ -34,18 +34,30 @@
         .hero-sub { font-size:0.95rem; color:var(--text-mid); max-width:340px; margin:1.5rem 0 2.5rem; }
         .btn-fill { background:var(--terra); color:white; padding:0.85rem 2rem; border-radius:50px; text-decoration:none; font-size:0.82rem; text-transform:uppercase; }
         
-        .product-layout, .shades-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+        .marquee-strip { background:var(--terra); padding:0.75rem 0; overflow:hidden; white-space:nowrap; }
+        .marquee-inner { display:inline-flex; animation:marquee 20s linear infinite; }
+        .marquee-inner span { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.9); padding:0 2rem; }
+        
+        .features-strip { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(181,96,58,0.1); }
+        .feat-item { padding:2.5rem 2rem; text-align:center; border-right:1px solid rgba(181,96,58,0.1); }
+        
+        .product-layout { display:grid; grid-template-columns:1fr 1fr; gap:5rem; padding:7rem 8%; }
+        .product-img-main img, .product-img-floating img { width:100%; }
+        
+        .shades-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
         .shade-card { background:white; border-radius:20px; overflow:hidden; }
         .shade-img { aspect-ratio:3/4; position:relative; }
         .shade-img img { width:100%; height:100%; object-fit:cover; }
         
+        .testi-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+        .testi-card { background:var(--cream); border-radius:20px; padding:2.5rem; }
+        
         .order-form { background:white; border-radius:24px; padding:2.5rem; box-shadow:0 8px 40px rgba(0,0,0,0.06); }
         .input-group { margin-bottom:1rem; }
-        .input-group label { font-size:0.72rem; text-transform:uppercase; color:var(--text-mid); }
         .input-group input, .input-group select, .input-group textarea {
-            width:100%; padding:0.75rem 1rem; border:1.5px solid rgba(181,96,58,0.15); border-radius:10px; font-size:0.88rem;
+            width:100%; padding:0.75rem 1rem; border:1.5px solid rgba(181,96,58,0.15); border-radius:10px;
         }
-        .btn-submit { width:100%; background:var(--terra); color:white; border:none; border-radius:50px; padding:1rem; font-size:0.85rem; text-transform:uppercase; cursor:pointer; }
+        .btn-submit { width:100%; background:var(--terra); color:white; border:none; border-radius:50px; padding:1rem; text-transform:uppercase; }
         
         .reveal { opacity:0; transform:translateY(20px); transition:all 0.6s ease; }
         .reveal.visible { opacity:1; transform:none; }
@@ -60,6 +72,7 @@
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#produk">Produk</a></li>
         <li><a href="#galeri">Shade</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
         <li><a href="#pesanan">Pesan</a></li>
     </ul>
     <a href="https://wa.me/6288200328617" class="nav-wa"><i class="fab fa-whatsapp"></i> WA</a>
@@ -68,24 +81,82 @@
 <!-- HERO -->
 <section id="beranda">
     <div class="hero-left">
-        <h1>Kilau <em>Natural</em><br>Bibirmu</h1>
-        <p class="hero-sub">Wardah Glasting Liquid Lip — glossy, moisturizing, dan tahan lama.</p>
-        <a href="#galeri" class="btn-fill">Lihat Shade</a>
+        <div class="hero-eyebrow reveal">Exclusive Reseller</div>
+        <h1 class="reveal delay-1">Kilau <em>Natural</em><br>Bibirmu</h1>
+        <p class="hero-sub reveal delay-2">Wardah Glasting Liquid Lip — glossy, moisturizing, dan tahan lama.</p>
+        <div class="hero-badges reveal delay-2">
+            <span class="badge">High Shine</span>
+            <span class="badge">Moisturizing</span>
+            <span class="badge">Pigmented</span>
+        </div>
+        <div class="hero-ctas reveal delay-3">
+            <a href="#galeri" class="btn-fill">Lihat Shade</a>
+            <a href="#pesanan" class="btn-ghost">Pesan Sekarang <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-price-tag reveal delay-3">
+            <span class="price">Rp 75.000</span>
+            <small>/ per produk</small>
+        </div>
     </div>
     <div class="hero-right">
         <img src="ya/jelita cosmetick hero.jpg" alt="Jelita Cosmetick Hero">
     </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee-strip">
+    <div class="marquee-inner">
+        <span>Glossy Finish</span><span>Moisturizing</span><span>High Pigment</span><span>Non Sticky</span><span>Tahan Lama</span><span>Vitamin E</span>
+        <span>Glossy Finish</span><span>Moisturizing</span><span>High Pigment</span><span>Non Sticky</span><span>Tahan Lama</span><span>Vitamin E</span>
+    </div>
+</div>
+
+<!-- FEATURES STRIP -->
+<div class="features-strip">
+    <div class="feat-item reveal">
+        <div class="feat-icon"><i class="fas fa-gem"></i></div>
+        <h4>High Shine</h4>
+        <p>Kilau glossy elegan finishing premium</p>
+    </div>
+    <div class="feat-item reveal delay-1">
+        <div class="feat-icon"><i class="fas fa-tint"></i></div>
+        <h4>Moisturizing</h4>
+        <p>Vitamin E untuk bibir lembut seharian</p>
+    </div>
+    <div class="feat-item reveal delay-2">
+        <div class="feat-icon"><i class="fas fa-palette"></i></div>
+        <h4>Pigmented</h4>
+        <p>Warna solid intens dalam satu sapuan</p>
+    </div>
+    <div class="feat-item reveal delay-3">
+        <div class="feat-icon"><i class="fas fa-feather-alt"></i></div>
+        <h4>Comfortable</h4>
+        <p>Ringan, tidak lengket, nyaman dipakai</p>
+    </div>
+</div>
+
 <!-- PRODUK -->
 <section id="produk">
     <div class="product-layout">
-        <div>
-            <img src="ya/wardah glasting caramel coat.jpg" alt="Produk">
+        <div class="product-img-stack reveal">
+            <div class="product-img-main">
+                <img src="ya/wardah glasting caramel coat.jpg" alt="Wardah Glasting Caramel Coat">
+            </div>
+            <div class="product-img-floating">
+                <img src="ya/wardah glasting caramel coat.jpg" alt="Swatch Glasting">
+            </div>
         </div>
-        <div>
-            <h2>Wardah <em>Glasting</em> Liquid Lip</h2>
-            <p>Formulasi ringan dengan pigmentasi tinggi.</p>
+        <div class="product-text reveal delay-2">
+            <div class="section-label">Tentang Produk</div>
+            <h2>Wardah <em>Glasting</em><br>Liquid Lip</h2>
+            <p class="product-desc">Formulasi ringan dengan pigmentasi tinggi yang memberikan tampilan bibir sehat, berkilau natural, dan nyaman digunakan sepanjang hari.</p>
+            <ul class="feature-list">
+                <li>Hasil akhir glossy berkilau — kesan bibir sehat alami</li>
+                <li>Ringan, tidak lengket, nyaman di bibir</li>
+                <li>Warna intens dalam sekali oles</li>
+                <li>Tahan lama dan tidak mudah pudar</li>
+                <li>Melembapkan bibir berkat kandungan Vitamin E</li>
+            </ul>
             <a href="#pesanan" class="btn-fill">Pesan Sekarang</a>
         </div>
     </div>
@@ -102,7 +173,6 @@
     </div>
 
     <div class="shades-grid">
-        <!-- Caramel Coat -->
         <div class="shade-card reveal">
             <div class="shade-img">
                 <span class="shade-number">01</span>
@@ -116,7 +186,6 @@
             </div>
         </div>
 
-        <!-- Glazing Berry -->
         <div class="shade-card reveal delay-1">
             <div class="shade-img">
                 <span class="shade-number">05</span>
@@ -125,12 +194,11 @@
             <div class="shade-info">
                 <div class="shade-color-dot" style="background:#C4867A"></div>
                 <h3>Glazing Berry</h3>
-                <p>Berry Rose — berry rose manis dan segar, bikin wajah terlihat cerah.</p>
+                <p>Berry Rose — berry rose manis dan segar.</p>
                 <a href="#pesanan" class="shade-cta">Pesan Shade Ini <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
 
-        <!-- Pudgy Toffee -->
         <div class="shade-card reveal delay-2">
             <div class="shade-img">
                 <span class="shade-number">09</span>
@@ -139,8 +207,42 @@
             <div class="shade-info">
                 <div class="shade-color-dot" style="background:#9B6B5C"></div>
                 <h3>Pudgy Toffee</h3>
-                <p>Soft Toffee Brown — cokelat toffee lembut untuk look elegan dan effortless.</p>
+                <p>Soft Toffee Brown — cokelat toffee lembut untuk look elegan.</p>
                 <a href="#pesanan" class="shade-cta">Pesan Shade Ini <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni">
+    <div class="testi-header">
+        <div class="section-label">Testimoni</div>
+        <h2>Apa Kata <em>Mereka?</em></h2>
+    </div>
+    <div class="testi-grid">
+        <div class="testi-card featured reveal">
+            <div class="quote-mark">"</div>
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">Suka banget! Ga lengket dan warnanya cantik natural. Sekarang wajib ada di tas setiap hari. Shade Caramel Coat cocok banget buat kulitku!</p>
+            <div class="testi-user">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="testi-avatar">
+                <div>
+                    <h4>Sarah R.</h4>
+                    <span>Jakarta — Caramel Coat</span>
+                </div>
+            </div>
+        </div>
+        <div class="testi-card reveal delay-1">
+            <div class="quote-mark" style="color:rgba(181,96,58,0.15)">"</div>
+            <div class="stars">★★★★★</div>
+            <p class="testi-text" style="color:var(--text-mid)">Bibir jadi glossy dan sehat banget. Tahan lama padahal aku makan dan minum terus. Glazing Berry warnanya persis yang aku cari!</p>
+            <div class="testi-user">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amanda" class="testi-avatar">
+                <div>
+                    <h4>Amanda K.</h4>
+                    <span>Yogyakarta — Glazing Berry</span>
+                </div>
             </div>
         </div>
     </div>
@@ -148,47 +250,90 @@
 
 <!-- PESAN -->
 <section id="pesanan">
-    <div class="order-form">
-        <h3>Form Pemesanan</h3>
+    <div class="order-info">
+        <div class="section-label reveal">Hubungi Kami</div>
+        <h2 class="reveal delay-1">Pesan <em>Sekarang</em><br>via WhatsApp</h2>
+        <p class="reveal delay-1">Kami siap membantu kamu menemukan shade yang paling cocok.</p>
+        <div class="contact-links reveal delay-2">
+            <a href="https://wa.me/6288200328617" target="_blank" class="contact-link">
+                <div class="contact-link-icon wa"><i class="fab fa-whatsapp"></i></div>
+                <div class="contact-link-text">
+                    <h4>0882 0032 8617</h4>
+                    <span>Chat langsung via WhatsApp</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="order-form reveal delay-1">
+        <div class="form-title">Form Pemesanan</div>
         <div class="input-group">
-            <label>Nama</label>
-            <input type="text" id="name" required>
+            <label>Nama Lengkap</label>
+            <input type="text" id="name" placeholder="Anita Putri" required>
         </div>
         <div class="input-group">
-            <label>No WhatsApp</label>
-            <input type="tel" id="phone" required>
+            <label>No. WhatsApp</label>
+            <input type="tel" id="phone" placeholder="08xxxxxxxxxx" required>
         </div>
         <div class="input-group">
-            <label>Alamat</label>
-            <input type="text" id="address" required>
+            <label>Alamat Pengiriman</label>
+            <input type="text" id="address" placeholder="Jl. Contoh No. 1, Kota" required>
         </div>
         <div class="input-group">
-            <label>Shade</label>
+            <label>Pilih Shade</label>
             <select id="shade" required>
                 <option value="01 Caramel Coat">01 — Caramel Coat</option>
                 <option value="05 Glazing Berry">05 — Glazing Berry</option>
                 <option value="09 Pudgy Toffee">09 — Pudgy Toffee</option>
             </select>
         </div>
-        <button class="btn-submit" onclick="sendOrder()">Kirim via WhatsApp</button>
+        <button class="btn-submit" onclick="sendOrder()">
+            <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+        </button>
     </div>
 </section>
 
+<!-- FOOTER -->
+<footer>
+    <div class="footer-brand">
+        <a href="#" class="logo">Jelita Cosmetick</a>
+        <p>Exclusive reseller Wardah Glasting Liquid Lip. Bibir glossy, cantik on-point seharian.</p>
+    </div>
+    <div class="footer-col">
+        <h4>Navigasi</h4>
+        <a href="#beranda">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#galeri">Shade</a>
+        <a href="#pesanan">Pesan</a>
+    </div>
+    <div class="footer-col">
+        <h4>Kontak</h4>
+        <a href="https://wa.me/6288200328617">0882 0032 8617</a>
+        <a href="https://instagram.com/jelita.cosmetick">@jelita.cosmetick</a>
+    </div>
+</footer>
+
 <script>
-function sendOrder() {
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const address = document.getElementById('address').value.trim();
-    const shade = document.getElementById('shade').value;
-    
-    if (!name || !address || !shade) {
-        alert('Mohon lengkapi Nama, Alamat, dan Shade');
-        return;
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    function sendOrder() {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const shade = document.getElementById('shade').value;
+        
+        if (!name || !address || !shade) {
+            alert('Mohon lengkapi Nama, Alamat, dan Shade');
+            return;
+        }
+        
+        const text = `Halo Jelita Cosmetick!\n\nNama: ${name}\nWA: ${phone}\nAlamat: ${address}\nShade: ${shade}`;
+        window.open(`https://wa.me/6288200328617?text=${encodeURIComponent(text)}`, '_blank');
     }
-    
-    const text = `Halo Jelita Cosmetick!\n\nNama: ${name}\nWA: ${phone}\nAlamat: ${address}\nShade: ${shade}`;
-    window.open(`https://wa.me/6288200328617?text=${encodeURIComponent(text)}`, '_blank');
-}
 </script>
 
 </body>
